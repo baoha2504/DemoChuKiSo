@@ -396,9 +396,9 @@
             this.gunaLabel8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel8.Location = new System.Drawing.Point(19, 96);
             this.gunaLabel8.Name = "gunaLabel8";
-            this.gunaLabel8.Size = new System.Drawing.Size(161, 20);
+            this.gunaLabel8.Size = new System.Drawing.Size(167, 20);
             this.gunaLabel8.TabIndex = 10;
-            this.gunaLabel8.Text = "Băm SHA256 đầu vào";
+            this.gunaLabel8.Text = "Băm SHA-256 đầu vào";
             // 
             // gunaLabel6
             // 
@@ -573,9 +573,9 @@
             this.gunaLabel10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel10.Location = new System.Drawing.Point(15, 96);
             this.gunaLabel10.Name = "gunaLabel10";
-            this.gunaLabel10.Size = new System.Drawing.Size(161, 20);
+            this.gunaLabel10.Size = new System.Drawing.Size(167, 20);
             this.gunaLabel10.TabIndex = 12;
-            this.gunaLabel10.Text = "Băm SHA256 đầu vào";
+            this.gunaLabel10.Text = "Băm SHA-256 đầu vào";
             // 
             // gunaLabel7
             // 
