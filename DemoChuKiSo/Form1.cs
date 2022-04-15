@@ -240,6 +240,7 @@ namespace DemoChuKiSo
                     else
                     {
                         MessageBox.Show("Tài liệu sai hoặc bị đã bị sửa đổi", "Thông báo", MessageBoxButtons.OK);
+                        check = false;
                     }
                 }
                 catch (Exception ex)
