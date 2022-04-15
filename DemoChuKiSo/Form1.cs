@@ -57,6 +57,7 @@ namespace DemoChuKiSo
                     StreamReader rd = new StreamReader(fs, Encoding.UTF8);
                     filegui = rd.ReadToEnd();
                     txtSHAGui.Text = ComputeSha256Hash(filegui);
+                    RSA_MaHoa(txtSHAGui.Text);
                     rd.Close();
                 }
             } 
@@ -230,17 +231,22 @@ namespace DemoChuKiSo
                 }
                 try
                 {
-                    RSA_GiaiMa(chuki);
-
-                    if (txtSHANhan.Text == txtChuKiNhan.Text)
-                    {
-                        MessageBox.Show("Tài liệu được xác thực thành công", "Thông báo", MessageBoxButtons.OK);
-                        check = true;
+                    if (dlg.FileName.Contains(".txt")) {
+                        RSA_GiaiMa(chuki);
+                        if (txtSHANhan.Text == txtChuKiNhan.Text)
+                        {
+                            MessageBox.Show("Tài liệu được xác thực thành công", "Thông báo", MessageBoxButtons.OK);
+                            check = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Tài liệu sai hoặc bị đã bị sửa đổi", "Thông báo", MessageBoxButtons.OK);
+                            check = false;
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Tài liệu sai hoặc bị đã bị sửa đổi", "Thông báo", MessageBoxButtons.OK);
-                        check = false;
+                        MessageBox.Show("File giải mã không phù hợp", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)
@@ -250,7 +256,7 @@ namespace DemoChuKiSo
                 
             } else
             {
-                MessageBox.Show("Chưa nhập tài liệu để kiểm tra", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Chưa nhập tài liệu để kiểm tra", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -344,7 +350,7 @@ namespace DemoChuKiSo
 
         private void btTaoChuKi_Click(object sender, EventArgs e)
         {
-            if (txtSHAGui.Text == "")
+            if (txtSHAGui.Text == string.Empty)
             {
                 MessageBox.Show("Bạn chưa nhập bản rõ kí!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -359,14 +365,23 @@ namespace DemoChuKiSo
                 }
                 try
                 {
-                    RSA_MaHoa(txtSHAGui.Text);
-                    FileStream fs = new FileStream(filechuki, FileMode.Create);//Tạo file mới tên là test.txt            
-                    StreamWriter sWriter = new StreamWriter(fs, Encoding.UTF8);//fs là 1 FileStream 
-                    sWriter.WriteLine(txtChuKiGui.Text);
-                    kixong = true;
-                    // Ghi và đóng file
-                    sWriter.Flush();
-                    fs.Close();
+                    if (filechuki.Contains(".txt"))
+                    {
+                        //RSA_MaHoa(txtSHAGui.Text);
+                        FileStream fs = new FileStream(filechuki, FileMode.Create);//Tạo file mới tên là test.txt            
+                        StreamWriter sWriter = new StreamWriter(fs, Encoding.UTF8);//fs là 1 FileStream 
+                        sWriter.WriteLine(txtChuKiGui.Text);
+                        kixong = true;
+                        // Ghi và đóng file
+                        sWriter.Flush();
+                        fs.Close();
+                        MessageBox.Show("Kí thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("File để kí không phù hợp", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        kixong = false;
+                    }
                 }
                 catch (Exception ex)
                 {
