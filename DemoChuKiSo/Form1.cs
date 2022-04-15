@@ -19,6 +19,7 @@ namespace DemoChuKiSo
             InitializeComponent();
         }
 
+        //khai báo biến
         string filegui;
         string filechuki;
         string chuki;
@@ -27,7 +28,7 @@ namespace DemoChuKiSo
         bool checkTaoKhoa = false;
         bool kixong = false;
 
-        static string ComputeSha256Hash(string rawData)
+        static string ComputeSha256Hash(string rawData) // hàm mã hóa SHA-256
         {
             // Create a SHA256   
             using (SHA256 sha256Hash = SHA256.Create())
@@ -45,7 +46,7 @@ namespace DemoChuKiSo
             }
         }
 
-        private void btChonFileGui_Click(object sender, EventArgs e)
+        private void btChonFileGui_Click(object sender, EventArgs e) // chọn file để gửi
         {
             if (checkTaoKhoa == true)
             {
@@ -67,7 +68,7 @@ namespace DemoChuKiSo
             }
         }
 
-        private void btChonFileNhan_Click(object sender, EventArgs e)
+        private void btChonFileNhan_Click(object sender, EventArgs e) // chọn file đã nhận
         {
             if (kixong == true)
             {
@@ -96,10 +97,12 @@ namespace DemoChuKiSo
             }
         }
 
+        //khai báo các biến để tạo khóa
         int RSA_soP, RSA_soQ, RSA_soN, RSA_soE, RSA_soD, RSA_soPhi_n;
         public int RSA_d_dau = 0;
 
-        private int RSA_ChonSoNgauNhien()
+        
+        private int RSA_ChonSoNgauNhien() // random chọn ra 2 số
         {
             Random rd = new Random();
             return rd.Next(11, 101);// tốc độ chậm nên chọn số bé
@@ -166,7 +169,6 @@ namespace DemoChuKiSo
         // "Hàm lấy mod"
         public int RSA_mod(int mx, int ex, int nx)
         {
-
             //Sử dụng thuật toán "bình phương nhân"
             //Chuyển e sang hệ nhị phân
             int[] a = new int[100];
@@ -188,6 +190,8 @@ namespace DemoChuKiSo
             }
             return kq;
         }
+
+        // hàm tạo khóa
         private void RSA_taoKhoa()
         {
             //Tinh n=p*q
@@ -217,7 +221,7 @@ namespace DemoChuKiSo
             Key_BM_2.Text = RSA_soD.ToString();
         }
 
-        private void btKiemTra_Click(object sender, EventArgs e)
+        private void btKiemTra_Click(object sender, EventArgs e) // hàm xác thực tài liệu
         {
             if (txtFileNhan.Text != string.Empty)
             {
@@ -260,7 +264,7 @@ namespace DemoChuKiSo
             }
         }
 
-        private void btMoFile_Click(object sender, EventArgs e)
+        private void btMoFile_Click(object sender, EventArgs e) // hàm mở file khi xác thực thành công
         {
             if (check == true)
             {
@@ -318,7 +322,6 @@ namespace DemoChuKiSo
             txtChuKiGui.Text = Convert.ToBase64String(data);
             chuki = Convert.ToBase64String(data);
             //rsa_banMaHoaGuiDen.Text = Convert.ToBase64String(data);
-
         }
 
         
@@ -348,7 +351,7 @@ namespace DemoChuKiSo
             txtChuKiNhan.Text = Encoding.Unicode.GetString(data2);
         }
 
-        private void btTaoChuKi_Click(object sender, EventArgs e)
+        private void btTaoChuKi_Click(object sender, EventArgs e) // hàm kí vào file
         {
             if (txtSHAGui.Text == string.Empty)
             {
@@ -390,7 +393,7 @@ namespace DemoChuKiSo
             }
         }
 
-        private void btCreatKey_Click(object sender, EventArgs e)
+        private void btCreatKey_Click(object sender, EventArgs e) // tạo khóa
         {
             RSA_soP = RSA_soQ = 0;
             do
@@ -405,7 +408,7 @@ namespace DemoChuKiSo
             checkTaoKhoa = true;
         }
 
-        private void btRefreshKey_Click(object sender, EventArgs e)
+        private void btRefreshKey_Click(object sender, EventArgs e) // refresh
         {
             txtP.Text = string.Empty;
             txtQ.Text = string.Empty;
