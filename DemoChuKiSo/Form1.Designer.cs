@@ -122,12 +122,11 @@
             this.Key_BM_2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Key_BM_2.Location = new System.Drawing.Point(256, 353);
             this.Key_BM_2.Name = "Key_BM_2";
-            this.Key_BM_2.PasswordChar = '●';
+            this.Key_BM_2.PasswordChar = '\0';
             this.Key_BM_2.SelectedText = "";
             this.Key_BM_2.Size = new System.Drawing.Size(63, 32);
             this.Key_BM_2.TabIndex = 13;
             this.Key_BM_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.Key_BM_2.UseSystemPasswordChar = true;
             // 
             // Key_CK_2
             // 
@@ -260,12 +259,11 @@
             this.Key_BM_1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Key_BM_1.Location = new System.Drawing.Point(197, 353);
             this.Key_BM_1.Name = "Key_BM_1";
-            this.Key_BM_1.PasswordChar = '●';
+            this.Key_BM_1.PasswordChar = '\0';
             this.Key_BM_1.SelectedText = "";
             this.Key_BM_1.Size = new System.Drawing.Size(61, 32);
             this.Key_BM_1.TabIndex = 4;
             this.Key_BM_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.Key_BM_1.UseSystemPasswordChar = true;
             // 
             // Key_CK_1
             // 

@@ -2,7 +2,6 @@ C:\Users\HA CONG QUOC BAO\Documents\NAM 3 KI 2\BD-AT Thong Tin\DemoChuKiSo\DemoC
 C:\Users\HA CONG QUOC BAO\Documents\NAM 3 KI 2\BD-AT Thong Tin\DemoChuKiSo\DemoChuKiSo\bin\Debug\DemoChuKiSo.exe
 C:\Users\HA CONG QUOC BAO\Documents\NAM 3 KI 2\BD-AT Thong Tin\DemoChuKiSo\DemoChuKiSo\bin\Debug\DemoChuKiSo.pdb
 C:\Users\HA CONG QUOC BAO\Documents\NAM 3 KI 2\BD-AT Thong Tin\DemoChuKiSo\DemoChuKiSo\bin\Debug\Guna.UI.dll
-C:\Users\HA CONG QUOC BAO\Documents\NAM 3 KI 2\BD-AT Thong Tin\DemoChuKiSo\DemoChuKiSo\obj\Debug\DemoChuKiSo.csproj.AssemblyReference.cache
 C:\Users\HA CONG QUOC BAO\Documents\NAM 3 KI 2\BD-AT Thong Tin\DemoChuKiSo\DemoChuKiSo\obj\Debug\DemoChuKiSo.csproj.SuggestedBindingRedirects.cache
 C:\Users\HA CONG QUOC BAO\Documents\NAM 3 KI 2\BD-AT Thong Tin\DemoChuKiSo\DemoChuKiSo\obj\Debug\DemoChuKiSo.Form1.resources
 C:\Users\HA CONG QUOC BAO\Documents\NAM 3 KI 2\BD-AT Thong Tin\DemoChuKiSo\DemoChuKiSo\obj\Debug\DemoChuKiSo.Properties.Resources.resources
