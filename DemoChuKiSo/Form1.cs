@@ -27,7 +27,6 @@ namespace DemoChuKiSo
         bool check = false;
         bool checkTaoKhoa = false;
         bool kixong = false;
-
         static string ComputeSha256Hash(string rawData) // hàm mã hóa SHA-256
         {
             // Create a SHA256   
@@ -105,8 +104,9 @@ namespace DemoChuKiSo
         private int RSA_ChonSoNgauNhien() // random chọn ra 2 số
         {
             Random rd = new Random();
-            return rd.Next(11, 101);// tốc độ chậm nên chọn số bé
+            return rd.Next(100, 500);// demo nên chọn số bé
         }
+
         //"Hàm kiểm tra nguyên tố"
         private bool RSA_kiemTraNguyenTo(int xi)
         {
@@ -401,7 +401,7 @@ namespace DemoChuKiSo
                 RSA_soP = RSA_ChonSoNgauNhien();
                 RSA_soQ = RSA_ChonSoNgauNhien();
             }
-            while (RSA_soP == RSA_soQ || !RSA_kiemTraNguyenTo(RSA_soP) || !RSA_kiemTraNguyenTo(RSA_soQ));
+            while (RSA_soP == RSA_soQ || !RSA_kiemTraNguyenTo(RSA_soP) || !RSA_kiemTraNguyenTo(RSA_soQ) || RSA_soP > RSA_soQ);
             txtP.Text = RSA_soP.ToString();
             txtQ.Text = RSA_soQ.ToString();
             RSA_taoKhoa();
